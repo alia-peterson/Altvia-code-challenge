@@ -1,0 +1,10 @@
+{
+  "name": "altvia-card-shuffler",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest --env=jsdom"
+  },
+  "devDependencies": {
+    "jest": "^27.0.1"
+  }
+}
