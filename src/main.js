@@ -31,6 +31,7 @@ const shuffleCards = () => {
 
     cards = newCards
     buttonCounter++
+    return { cards, buttonCounter }
 }
 
 const displayCards = () => {
