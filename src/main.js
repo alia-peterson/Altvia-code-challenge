@@ -31,6 +31,8 @@ const shuffleCards = () => {
 
     cards = newCards
     buttonCounter++
+
+    // for testing purposes
     return { cards, buttonCounter }
 }
 
