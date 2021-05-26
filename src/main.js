@@ -7,6 +7,7 @@ shuffleButton.addEventListener('click', shuffleCards)
 for (let i = 1; i < 53; i++) {
     cards.push(i)
 }
+displayCards()
 
 function shuffleCards() {
     let newCards = []
@@ -18,4 +19,17 @@ function shuffleCards() {
     }
 
     cards = newCards
+    displayCards()
+}
+
+function displayCards () {
+    const cardContainer = document.querySelector('.container')
+
+    cards.forEach((card, i) => {
+        const cardElement = document.createElement('div')
+        cardElement.classList.add('card')
+        cardElement.innerText = card
+
+        cardContainer.appendChild(cardElement)
+    })
 }
