@@ -1,17 +1,26 @@
 
 let cards = []
 let buttonCounter = 0
+
 const shuffleButton = document.querySelector('.button')
 
-shuffleButton.addEventListener('click', shuffleCards)
+window.onload = () => {
+    createCardDeck()
+    displayCards()
 
-for (let i = 1; i < 53; i++) {
-    cards.push(i)
+    shuffleButton.addEventListener('click', () => {
+        shuffleCards()
+        displayCards()
+    })
 }
 
-displayCards()
+const createCardDeck = () => {
+    for (let i = 1; i < 53; i++) {
+        cards.push(i)
+    }
+}
 
-function shuffleCards() {
+const shuffleCards = () => {
     let newCards = []
 
     while(cards.length > 0) {
@@ -22,10 +31,9 @@ function shuffleCards() {
 
     cards = newCards
     buttonCounter++
-    displayCards()
 }
 
-function displayCards () {
+const displayCards = () => {
     const cardContainer = document.querySelector('.container')
     const box = document.createElement('section')
     box.classList.add('box')
@@ -43,4 +51,9 @@ function displayCards () {
 
     cardContainer.appendChild(newSectionHeader)
     cardContainer.appendChild(box)
+}
+
+// export functions for testing 
+if (typeof module !== 'undefined') {
+    module.exports = { cards, buttonCounter, createCardDeck, shuffleCards }
 }
